@@ -46,9 +46,9 @@
 
                     <div class="p-3">
                         <h4 class="text-dark font-18 m-b-5 text-center">Sign Up</h4>
-                        <p class="text-muted text-center">Get your free Smarty account now.</p>
+                        <p class="text-muted text-center">Get your free Refrigerg account now.</p>
 
-                        <form class="form-horizontal m-t-30" action="index.html">
+                        <form method="post" class="form-horizontal m-t-30" action="signup.php">
                             <?php include('handlers/errorHandler.php'); ?>
                             <div class="form-group">
                                 <label for="useremail">Email</label>
