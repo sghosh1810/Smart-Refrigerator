@@ -2,8 +2,10 @@
     session_start();
     $errors = array(); 
 
-    // connect to the database
-    $db = mysqli_connect('localhost', 'root', '', 'refrigerg');
+    //Connect to the database
+    //$db = mysqli_connect('localhost', 'root', '', 'refrigerg');
+    $db = mysqli_connect('eu-cdbr-west-02.cleardb.net','b24bdb07f8df3b','98354db2','heroku_d0b67b039063502');
+
 
     if (isset($_POST['login_user'])) {
         $username = mysqli_real_escape_string($db, $_POST['username']);
