@@ -54,7 +54,7 @@ if (isset($_GET['logout'])) {
                 <div class="topbar-left">
                     <div class="">
                         <!--<a href="index.html" class="logo text-center">Admiria</a>-->
-                        <a href="index.html" class="logo"><img src="assets/images/logo-sm.png" height="36" alt="logo"></a>
+                        <a href="index.php" class="logo"><img src="assets/images/logo-sm.png" height="36" alt="logo"></a>
                     </div>
                 </div>
 
@@ -194,7 +194,7 @@ if (isset($_GET['logout'])) {
                                 <li class="list-inline-item dropdown notification-list">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button"
                                        aria-haspopup="false" aria-expanded="false">
-                                        <img src="assets/images/users/user.png" alt="user" class="rounded-circle">
+                                        <img src="assets/images/users/marvel.png" alt="user" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                         <a class="dropdown-item" href="#"><i class="dripicons-user text-muted"></i> Profile</a>

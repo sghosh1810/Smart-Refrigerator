@@ -45,8 +45,8 @@
         $('#sa-useredit').click(function () {
             Swal.fire(
                 {
-                    title: 'Saved!',
-                    text: 'All changes successfully saved!',
+                    title: 'Saved',
+                    text: 'All changes saved successfully',
                     type: 'success',
                     showCancelButton: false,
                     confirmButtonClass: 'btn btn-success',
