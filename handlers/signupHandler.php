@@ -51,7 +51,7 @@
             mysqli_query($db, $query);
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
-            header('location: index.php');
+            header('location: app/user/index.php');
         }
     }
 ?>

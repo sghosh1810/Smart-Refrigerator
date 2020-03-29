@@ -39,11 +39,11 @@
 
             <div class="card">
                 <div class="card-body">
-                    <!--
-                    <h3 class="text-center m-0">
-                        <a href="signup.php" class="logo logo-admin"><img src="assets/images/logo.png" height="30" alt="logo"></a>
+
+                    <h3 class="text-center m-0" align="center">
+                        <a href="signup.php" class="logo logo-admin"><img src="assets/images/logo.png" height="25" alt="logo"></a>
                     </h3>
-                    -->
+
                     <div class="p-3">
                         <h4 class="text-dark font-18 m-b-5 text-center">Sign Up</h4>
                         <p class="text-muted text-center">Get your free Smarty account now.</p>
@@ -88,7 +88,7 @@
             </div>
 
             <div class="m-t-40 text-center"> 
-                <p class="text-white">© 2020 Smarty. Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://github.com/sghosh1810" class="font-500 font-14 text-white font-secondary">Me</a></p>
+                <p class="text-white">© 2020 Refrigerg. Crafted with <i class="mdi mdi-heart text-danger"></i> by <a href="https://github.com/sghosh1810" class="font-500 font-14 text-white font-secondary">Me</a></p>
             </div>
 
         </div>

@@ -25,11 +25,11 @@
                 $_SESSION['success'] = "You are now logged in";
                 $row = $results->fetch_assoc();
                 if($row["type"]!='admin'){
-                    header('location: index.php');
+                    header('location: app/user/index.php');
                 }
                 else {
                     $_SESSION['type']=$row['type'];
-                    header('location: index.php');
+                    header('location: app/admin/index.php');
                 }
                 
             }else {
