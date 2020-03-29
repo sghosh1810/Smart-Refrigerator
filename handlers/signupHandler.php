@@ -50,6 +50,7 @@
                     VALUES('$username', '$email', '$password', 'user')";
             mysqli_query($db, $query);
             $_SESSION['username'] = $username;
+            $_SESSION['email'] = $email;
             $_SESSION['success'] = "You are now logged in";
             header('location: app/user/index.php');
         }

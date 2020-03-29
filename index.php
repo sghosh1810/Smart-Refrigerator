@@ -6,10 +6,10 @@ if(!isset($_SESSION['username'])){
 }
 else {
     if(!isset($_SESSION['type'])){
-        header('location: index.php');
+        header('location: app/user/index.php');
     }
     else {
-        header('location: index.php');
+        header('location: app/admin/index.php');
     }
 }
 ?>

@@ -41,6 +41,20 @@
             )
         });
 
+        //Success Message override for userdetails.php
+        $('#sa-useredit').click(function () {
+            Swal.fire(
+                {
+                    title: 'Good job!',
+                    text: 'You clicked the button!',
+                    type: 'success',
+                    showCancelButton: true,
+                    confirmButtonClass: 'btn btn-success',
+                    cancelButtonClass: 'btn btn-danger m-l-10'
+                }
+            )
+        });
+
         //Warning Message
         $('#sa-warning').click(function () {
             Swal.fire({
