@@ -265,13 +265,13 @@ if (isset($_GET['logout'])) {
                                 </div>
                                 <div class="col-md-6 col-xl-3">
                                     <div class="mini-stat clearfix bg-white">
-                                        <span class="mini-stat-icon bg-teal mr-0 float-right"><i class="mdi mdi-coffee"></i></span>
+                                        <span class="mini-stat-icon bg-teal mr-0 float-right"><i class="mdi mdi-access-point-network"></i></span>
                                         <div class="mini-stat-info">
-                                            <span class="counter text-teal">20544</span>
-                                            Unique Visitors
+                                            <span class="counter text-teal" id="clientCountry">Country</span>
+                                            Client Info
                                         </div>
                                         <div class="clearfix"></div>
-                                        <p class="text-muted mb-0 m-t-20">Total income: $22506 <span class="pull-right"><i class="fa fa-caret-up m-r-5"></i>10.25%</span></p>
+                                        <p class="text-muted mb-0 m-t-20" id="clientIP">IP:</p>
                                     </div>
                                 </div>
                             </div>
@@ -376,7 +376,10 @@ if (isset($_GET['logout'])) {
         <script src="assets/js/waves.js"></script>
         <script src="assets/js/jquery.nicescroll.js"></script>
         <script src="assets/js/jquery.scrollTo.min.js"></script>
+
+        <!-- Notification js -->
         <script src="assets/js/notification.js"></script>
+        
 
         <!-- Peity chart JS -->
         <script src="../plugins/peity-chart/jquery.peity.min.js"></script>
@@ -394,6 +397,10 @@ if (isset($_GET['logout'])) {
 
         <!-- App js -->
         <script src="assets/js/app.js"></script>
+
+        <!-- IP js -->
+        <script src="assets/js/ip.js"></script>
+
 
     </body>
 </html>
