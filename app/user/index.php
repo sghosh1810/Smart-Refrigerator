@@ -69,35 +69,17 @@ if (isset($_GET['logout'])) {
                             </li>
 
                             <li>
-                                <a href="calendar.html" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Calendar </span></a>
+                                <a href="inventoryList.php" class="waves-effect"><i class="mdi mdi-view-list"></i><span> Inventory List </span></a>
                             </li>
 
-                            <li class="menu-title">Components</li>
+                            <li class="menu-title">Misc</li>
 
-
-
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-chart-line"></i><span> Charts <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="charts-morris.html">Morris Chart</a></li>
-                                    <li><a href="charts-chartist.html">Chartist Chart</a></li>
-                                    <li><a href="charts-chartjs.html">Chartjs Chart</a></li>
-                                    <li><a href="charts-flot.html">Flot Chart</a></li>
-                                    <li><a href="charts-c3.html">C3 Chart</a></li>
-                                    <li><a href="charts-sparkline.html">Sparkline Chart</a></li>
-                                    <li><a href="charts-other.html">Jquery Knob Chart</a></li>
-                                    <li><a href="charts-peity.html">Peity Chart</a></li>
-                                </ul>
+                            <li>
+                                <a href="calendar.html" class="waves-effect"><i class="mdi mdi-food"></i><span> Reciepe Recommender </span></a>
                             </li>
 
-                            <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted-type"></i><span> Tables <span class="pull-right"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="tables-basic.html">Basic Tables</a></li>
-                                    <li><a href="tables-datatable.html">Data Table</a></li>
-                                    <li><a href="tables-responsive.html">Responsive Table</a></li>
-                                    <li><a href="tables-editable.html">Editable Table</a></li>
-                                </ul>
+                            <li>
+                                <a href="calendar.html" class="waves-effect"><i class="mdi mdi-shopping"></i><span> Shopping List </span></a>
                             </li>
 
                             <li class="menu-title">Help & Support</li>

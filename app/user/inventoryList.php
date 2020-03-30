@@ -1,6 +1,4 @@
 <?php
-include('handlers/userDetailsHandler.php');
-
 session_start();
 
 if (!isset($_SESSION['username'])) {
@@ -13,6 +11,9 @@ if (isset($_GET['logout'])) {
 	header("location: ../../login.php");
 }
 ?>
+<?php include('handlers/inventoryListHandler.php');?>
+<?php include('handlers/errorHandler.php');?>
+
 
 <!doctype html>
 <html lang="en">
@@ -20,7 +21,7 @@ if (isset($_GET['logout'])) {
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>User Details</title>
+        <title>Inventory List</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Themesbrand" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -28,8 +29,12 @@ if (isset($_GET['logout'])) {
         <!-- App Icons -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
-        <!-- C3 charts css -->
-        <link href="../plugins/c3/c3.min.css" rel="stylesheet" type="text/css" />
+        <!-- DataTables -->
+        <link href="../plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+        <link href="../plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+        <!-- Responsive datatable examples -->
+        <link href="../plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
 
         <!-- Basic Css files -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -192,7 +197,7 @@ if (isset($_GET['logout'])) {
                                         <img src="assets/images/users/marvel.png" alt="user" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                                        <a class="dropdown-item" href="#"><i class="dripicons-user text-muted"></i> Profile</a>
+                                        <a class="dropdown-item" href="userdetails.php"><i class="dripicons-user text-muted"></i> Profile</a>
                                         <a class="dropdown-item" href="#"><i class="dripicons-lock text-muted"></i> Lock screen</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="index.php?logout='1'"><i class="dripicons-exit text-muted"></i> Logout</a>
@@ -231,45 +236,31 @@ if (isset($_GET['logout'])) {
                                     <div class="card m-b-20">
                                         <div class="card-body">
 
-                                            <h4 class="mt-0 header-title" align="center">User Details</h4>
-                                            <p> </p>
-                                            <p> </p>
-                                            <iframe style="width:0;height:0;border:0; border:none;" name="dummyframe" id="dummyframe"></iframe>
-                                            <form action="userdetails.php" method="post" target="dummyframe">
-                                                <div class="form-group row" action="userdetails.php">
-                                                    <label for="example-text-input" class="col-sm-2 col-form-label">Username</label>
-                                                    <div class="col-sm-10">
-                                                        <input class="form-control" type="text" id="example-text-input" value=<?php echo $_SESSION['username'];?> name="username" readonly="readonly">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-email-input" class="col-sm-2 col-form-label">Email</label>
-                                                    <div class="col-sm-10">
-                                                        <input class="form-control" type="email" id="example-email-input" value=<?php echo $_SESSION['email'];?> name="email">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-password-input" class="col-sm-2 col-form-label">New Password</label>
-                                                    <div class="col-sm-10">
-                                                        <input class="form-control" type="password" value="<?php echo $_SESSION['password'];?>" id="example-password-input" name="password">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group" align="right">
-                                                    <div>
-                                                        <p></p>
-                                                        <button type="submit" class="btn btn-pink waves-effect waves-light m-r-5" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to save modifications" name="editUser" id="sa-useredit"> 
-                                                            Save
-                                                        </button>
-                                                        <button type="reset" class="btn btn-secondary waves-effect" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to revert modifications">
-                                                            Cancel
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </form>
+                                            <h4 class="mt-0 header-title">Inventory List</h4>
+                                            <p class="text-muted m-b-30 font-14">
+                                                Track amount of food you have in your fridge from here.
+                                            </p>
+
+                                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Name</th>
+                                                        <th>Quantity</th>
+                                                        <th>Price[Per Unit]</th>
+                                                        <th>Total Price</th>
+                                                    </tr>
+                                                </thead>
+
+
+                                                <tbody>
+                                                    <?php echo $_SESSION['datarow']?>
+                                                </tbody>
+                                            </table>
+
                                         </div>
                                     </div>
                                 </div> <!-- end col -->
-                            </div> <!-- end row -->
+                            </div> 
 
                         </div><!-- container-fluid -->
 
@@ -298,30 +289,30 @@ if (isset($_GET['logout'])) {
         <script src="assets/js/jquery.nicescroll.js"></script>
         <script src="assets/js/jquery.scrollTo.min.js"></script>
 
-        <!-- Notification js -->
-        <script src="assets/js/notification.js"></script>
-        
+        <!-- Required datatable js -->
+        <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../plugins/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Buttons examples -->
+        <script src="../plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="../plugins/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="../plugins/datatables/jszip.min.js"></script>
+        <script src="../plugins/datatables/pdfmake.min.js"></script>
+        <script src="../plugins/datatables/vfs_fonts.js"></script>
+        <script src="../plugins/datatables/buttons.html5.min.js"></script>
+        <script src="../plugins/datatables/buttons.print.min.js"></script>
+        <script src="../plugins/datatables/buttons.colVis.min.js"></script>
+        <!-- Responsive examples -->
+        <script src="../plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="../plugins/datatables/responsive.bootstrap4.min.js"></script>
 
-        <!-- Peity chart JS -->
-        <script src="../plugins/peity-chart/jquery.peity.min.js"></script>
-
-        <!--C3 Chart-->
-        <script src="../plugins/d3/d3.min.js"></script>
-        <script src="../plugins/c3/c3.min.js"></script>
-
-        <!-- KNOB JS -->
-        <script src="../plugins/jquery-knob/excanvas.js"></script>
-        <script src="../plugins/jquery-knob/jquery.knob.js"></script>
-
-        <!-- Page specific js -->
-        <script src="assets/pages/dashboard.js"></script>
+        <!-- Datatable init js -->
+        <script src="assets/pages/datatables.init.js"></script>
 
         <!-- App js -->
         <script src="assets/js/app.js"></script>
 
-        <!-- Sweet-Alert  -->
-        <script src="../plugins/sweet-alert2/sweetalert2.all.min.js"></script>
-        <script src="assets/pages/sweet-alert.init.js"></script>
+        <!-- Notification js -->
+        <script src="assets/js/notification.js"></script>
 
 
     </body>
