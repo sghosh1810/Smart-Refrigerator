@@ -8,6 +8,8 @@
 
     // connect to the database
     $db = mysqli_connect('localhost', 'root', '', 'refrigerg');
+    //$db = mysqli_connect('eu-cdbr-west-02.cleardb.net','b24bdb07f8df3b','98354db2','heroku_d0b67b039063502');
+
 
     // REGISTER USER
     if (isset($_POST['reg_user'])) {
@@ -51,6 +53,7 @@
             mysqli_query($db, $query);
             $_SESSION['username'] = $username;
             $_SESSION['email'] = $email;
+            $_SESSION['password'] = $password;
             $_SESSION['success'] = "You are now logged in";
             header('location: app/user/index.php');
         }

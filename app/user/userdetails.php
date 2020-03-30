@@ -1,4 +1,6 @@
 <?php
+include('handlers/userDetailsHandler.php');
+
 session_start();
 
 if (!isset($_SESSION['username'])) {
@@ -239,36 +241,38 @@ if (isset($_GET['logout'])) {
                                             <h4 class="mt-0 header-title" align="center">User Details</h4>
                                             <p> </p>
                                             <p> </p>
-
-                                            <div class="form-group row">
-                                                <label for="example-text-input" class="col-sm-2 col-form-label">Username</label>
-                                                <div class="col-sm-10">
-                                                    <input class="form-control" type="text" id="example-text-input" value=<?php echo $_SESSION['username'];?> name="username" disabled>
+                                            <iframe style="width:0;height:0;border:0; border:none;" name="dummyframe" id="dummyframe"></iframe>
+                                            <form action="userdetails.php" method="post" target="dummyframe">
+                                                <div class="form-group row" action="userdetails.php">
+                                                    <label for="example-text-input" class="col-sm-2 col-form-label">Username</label>
+                                                    <div class="col-sm-10">
+                                                        <input class="form-control" type="text" id="example-text-input" value=<?php echo $_SESSION['username'];?> name="username" readonly="readonly">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="example-email-input" class="col-sm-2 col-form-label">Email</label>
-                                                <div class="col-sm-10">
-                                                    <input class="form-control" type="email" id="example-email-input" value=<?php echo $_SESSION['email'];?> name="email">
+                                                <div class="form-group row">
+                                                    <label for="example-email-input" class="col-sm-2 col-form-label">Email</label>
+                                                    <div class="col-sm-10">
+                                                        <input class="form-control" type="email" id="example-email-input" value=<?php echo $_SESSION['email'];?> name="email">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="example-password-input" class="col-sm-2 col-form-label">New Password</label>
-                                                <div class="col-sm-10">
-                                                    <input class="form-control" type="password" value="hunter2" id="example-password-input">
+                                                <div class="form-group row">
+                                                    <label for="example-password-input" class="col-sm-2 col-form-label">New Password</label>
+                                                    <div class="col-sm-10">
+                                                        <input class="form-control" type="password" value="<?php echo $_SESSION['password'];?>" id="example-password-input" name="password">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="form-group" align="right">
-                                                <div>
-                                                    <p></p>
-                                                    <button type="submit" class="btn btn-pink waves-effect waves-light m-r-5" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to save modifications" id="sa-useredit"> 
-                                                        Save
-                                                    </button>
-                                                    <button type="reset" class="btn btn-secondary waves-effect" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to revert modifications">
-                                                        Cancel
-                                                    </button>
+                                                <div class="form-group" align="right">
+                                                    <div>
+                                                        <p></p>
+                                                        <button type="submit" class="btn btn-pink waves-effect waves-light m-r-5" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to save modifications" name="editUser" id="sa-useredit"> 
+                                                            Save
+                                                        </button>
+                                                        <button type="reset" class="btn btn-secondary waves-effect" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to revert modifications">
+                                                            Cancel
+                                                        </button>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div> <!-- end col -->
@@ -321,9 +325,6 @@ if (isset($_GET['logout'])) {
 
         <!-- App js -->
         <script src="assets/js/app.js"></script>
-
-        <!-- IP js -->
-        <script src="assets/js/ip.js"></script>
 
         <!-- Sweet-Alert  -->
         <script src="../plugins/sweet-alert2/sweetalert2.all.min.js"></script>
