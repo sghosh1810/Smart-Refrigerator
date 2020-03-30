@@ -31,10 +31,10 @@
 
                 $_SESSION['email'] = $row["email"];
                 if($row["type"]=='admin'){
+                    $_SESSION['type']=$row['type'];
                     header('location: app/admin/index.php');
                 }
                 else {
-                    $_SESSION['type']=$row['type'];
                     header('location: app/user/index.php');
                 }
                 
