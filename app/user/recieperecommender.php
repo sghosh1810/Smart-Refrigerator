@@ -7,11 +7,11 @@ if (!isset($_SESSION['username'])) {
 }
 if (isset($_GET['logout'])) {
 	session_destroy();
-	unset($_SESSION['username']);
+    unset($_SESSION['username']);
 	header("location: ../../login.php");
 }
 ?>
-<?php include('handlers/inventoryListHandler.php');?>
+<?php include('handlers/reciepeRecommendationHandler.php');?>
 <?php include('handlers/errorHandler.php');?>
 
 
@@ -244,16 +244,17 @@ if (isset($_GET['logout'])) {
                                             <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                                                 <thead>
                                                     <tr>
-                                                        <th>Name</th>
-                                                        <th>Quantity</th>
-                                                        <th>Price[Per Unit]</th>
-                                                        <th>Total Price</th>
+                                                        <th>Reciepe Name</th>
+                                                        <th>Ingredients Available</th>
+                                                        <th>Ingredients out of Stock</th>
+                                                        <th>Required Ingredients</th>
+                                                        <th>Full Reciepe</th>
                                                     </tr>
                                                 </thead>
 
 
                                                 <tbody>
-                                                    <?php echo $_SESSION['inventory']?>
+                                                    <?php echo $_SESSION['reciepe']?>
                                                 </tbody>
                                             </table>
 

@@ -10,5 +10,5 @@
         $totalPrice = (int)$row[2]*(int)$row[3];
         $datarow = $datarow."<tr><td>$row[1]</td><td>$row[2]</td><td>$$row[3]</td><td>$$totalPrice</td></tr>";
     }
-    $_SESSION['datarow']=$datarow;
+    $_SESSION['inventory']=$datarow;
 ?>

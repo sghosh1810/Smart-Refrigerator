@@ -75,7 +75,7 @@ if (isset($_GET['logout'])) {
                             <li class="menu-title">Misc</li>
 
                             <li>
-                                <a href="calendar.html" class="waves-effect"><i class="mdi mdi-food"></i><span> Reciepe Recommender </span></a>
+                                <a href="recieperecommender.php" class="waves-effect"><i class="mdi mdi-food"></i><span> Reciepe Recommender </span></a>
                             </li>
 
                             <li>

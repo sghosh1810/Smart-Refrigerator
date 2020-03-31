@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 30, 2020 at 09:17 PM
+-- Generation Time: Mar 31, 2020 at 07:44 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.27
 
@@ -40,7 +40,8 @@ CREATE TABLE `items` (
 --
 
 INSERT INTO `items` (`username`, `product`, `quantity`, `price`) VALUES
-('admin', 'apple', 5, 1);
+('admin', 'apple', 5, 1),
+('admin', 'banana', 12, 1);
 
 -- --------------------------------------------------------
 
