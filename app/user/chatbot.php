@@ -1,6 +1,4 @@
 <?php
-include('handlers/userDetailsHandler.php');
-
 session_start();
 
 if (!isset($_SESSION['username'])) {
@@ -9,7 +7,7 @@ if (!isset($_SESSION['username'])) {
 }
 if (isset($_GET['logout'])) {
 	session_destroy();
-	unset($_SESSION['username']);
+    unset($_SESSION['username']);
     unset($_SESSION['password']);
     unset($_SESSION['email']);
     unset($_SESSION['reciepe']);
@@ -24,7 +22,7 @@ if (isset($_GET['logout'])) {
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>User Details</title>
+        <title>Dashboard</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Themesbrand" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +38,6 @@ if (isset($_GET['logout'])) {
         <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
         <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
-       
 
     </head>
 
@@ -63,15 +60,6 @@ if (isset($_GET['logout'])) {
                         <a href="index.php" class="logo"><img src="assets/images/logo-sm.png" height="36" alt="logo"></a>
                     </div>
                 </div>
-                <div class="left side-menu">
-
-                <!-- LOGO -->
-                <div class="topbar-left">
-                    <div class="">
-                        <!--<a href="index.html" class="logo text-center">Admiria</a>-->
-                        <a href="index.php" class="logo"><img src="assets/images/logo-sm.png" height="36" alt="logo"></a>
-                    </div>
-                </div>
 
                 <div class="sidebar-inner slimscrollleft">
                     <div id="sidebar-menu">
@@ -79,7 +67,7 @@ if (isset($_GET['logout'])) {
 
                             <li class="menu-title">Main</li>
 
-                            <li>
+                            <li class="has_sub">
                                 <a href="index.php" class="waves-effect"><i class="mdi mdi-view-dashboard"></i><span> Dashboard </span></a>
                             </li>
 
@@ -111,8 +99,6 @@ if (isset($_GET['logout'])) {
                     </div>
                     <div class="clearfix"></div>
                 </div> <!-- end sidebarinner -->
-            </div>
-                
             </div>
             <!-- Left Sidebar End -->
 
@@ -196,7 +182,7 @@ if (isset($_GET['logout'])) {
                                         <img src="assets/images/users/marvel.png" alt="user" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                                        <a class="dropdown-item" href="#"><i class="dripicons-user text-muted"></i> Profile</a>
+                                        <a class="dropdown-item" href="userdetails.php"><i class="dripicons-user text-muted"></i> Profile</a>
                                         <a class="dropdown-item" href="#"><i class="dripicons-lock text-muted"></i> Lock screen</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="index.php?logout='1'"><i class="dripicons-exit text-muted"></i> Logout</a>
@@ -228,53 +214,13 @@ if (isset($_GET['logout'])) {
 
                     <div class="page-content-wrapper">
 
-                        <div class="container-fluid">
-
-                        <div class="row">
-                                <div class="col-12">
-                                    <div class="card m-b-20">
-                                        <div class="card-body">
-
-                                            <h4 class="mt-0 header-title" align="center">User Details</h4>
-                                            <p> </p>
-                                            <p> </p>
-                                            <iframe style="width:0;height:0;border:0; border:none;" name="dummyframe" id="dummyframe"></iframe>
-                                            <form action="userdetails.php" method="post" target="dummyframe">
-                                                <div class="form-group row" action="userdetails.php">
-                                                    <label for="example-text-input" class="col-sm-2 col-form-label">Username</label>
-                                                    <div class="col-sm-10">
-                                                        <input class="form-control" type="text" id="example-text-input" value=<?php echo $_SESSION['username'];?> name="username" readonly="readonly">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-email-input" class="col-sm-2 col-form-label">Email</label>
-                                                    <div class="col-sm-10">
-                                                        <input class="form-control" type="email" id="example-email-input" value=<?php echo $_SESSION['email'];?> name="email">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-password-input" class="col-sm-2 col-form-label">New Password</label>
-                                                    <div class="col-sm-10">
-                                                        <input class="form-control" type="password" value="" id="example-password-input" name="password" required>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group" align="right">
-                                                    <div>
-                                                        <p></p>
-                                                        <button type="submit" class="btn btn-pink waves-effect waves-light m-r-5" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to save modifications" name="editUser" id="sa-useredit"> 
-                                                            Save
-                                                        </button>
-                                                        <button type="reset" class="btn btn-secondary waves-effect" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to revert modifications">
-                                                            Cancel
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div> <!-- end col -->
-                            </div> <!-- end row -->
-
+                        <div class="container-fluid" align="center" id="chat" style="justify-content: center">
+                            <iframe
+                                allow="microphone;"
+                                width="90%"
+                                height="750"
+                                src="https://console.dialogflow.com/api-client/demo/embedded/df75bdbf-c771-45fb-ad58-964b23410a1b">
+                            </iframe>
                         </div><!-- container-fluid -->
 
                     </div> <!-- Page content Wrapper -->
@@ -323,9 +269,8 @@ if (isset($_GET['logout'])) {
         <!-- App js -->
         <script src="assets/js/app.js"></script>
 
-        <!-- Sweet-Alert  -->
-        <script src="../plugins/sweet-alert2/sweetalert2.all.min.js"></script>
-        <script src="assets/pages/sweet-alert.init.js"></script>
+        <!-- IP js -->
+        <script src="assets/js/ip.js"></script>
 
 
     </body>

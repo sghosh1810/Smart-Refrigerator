@@ -8,9 +8,13 @@
     while($row=mysqli_fetch_array($results)) {
         $getUrlIngredientName = $getUrlIngredientName.$row[0].",+";
     }
+    
 
+    //To delete last +,
     $getUrlIngredientName=substr($getUrlIngredientName,0,-2);
 
+
+    //Access RapidAPI {get id by ingredients}
     $getUrlIngredientNameFullURL = "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients=".$getUrlIngredientName;
 
     //array_push($errors,$getUrlIngredientNameFullURL);
@@ -43,6 +47,8 @@
     }
     //echo $response;
     
+
+    //Convert responce to json object
     $getResponseByIngredientJson = json_decode($getResponseByIngredient, true);
 
     $datarow = "";
@@ -54,7 +60,7 @@
         $usedIngredientCount =  $getResponseByIngredientJson[$i]['usedIngredientCount'];
         $missedIngredientCount = $getResponseByIngredientJson[$i]['missedIngredientCount'];
 
-        
+        //Access spoonacular api to get ingredient list/url to reciepe {using id from previous api call}
         $getUrlByReciepeIdFullURL = "https://api.spoonacular.com/recipes/".$id."/information?includeNutrition=false&apiKey=f4efd82e83c54a2dbcbd7e3bf93e014f";
 
         $curl = curl_init();
@@ -84,6 +90,7 @@
         $requiredIngredients = "";
         
         $numberOfIngredientCounter=0;
+        //Show upto 5 ingredients
         foreach($requiredIngredientsJson as $ingredients){
             if($numberOfIngredientCounter<5) {
                 $requiredIngredients = $requiredIngredients.$ingredients['name'].",";
@@ -94,9 +101,13 @@
             }
         }
 
+        //Deletes last ,
         $requiredIngredients = substr($requiredIngredients,0,-1);
 
+        //Builds buuton for view reciepe row
         $buttonBuilder = "<button class=\"btn btn-purple waves-effect waves-light\"onclick=\"window.open('".$spoonacularSourceUrl."')\">Full Reciepe</button>";
+
+        //Builds full table
         $datarow = $datarow."<tr><td>$title</td><td>$usedIngredientCount</td><td>$missedIngredientCount</td><td>$requiredIngredients</td><td>$buttonBuilder</td></tr>";
     }
     $_SESSION['reciepe']=$datarow;

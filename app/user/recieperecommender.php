@@ -8,6 +8,10 @@ if (!isset($_SESSION['username'])) {
 if (isset($_GET['logout'])) {
 	session_destroy();
     unset($_SESSION['username']);
+    unset($_SESSION['password']);
+    unset($_SESSION['email']);
+    unset($_SESSION['reciepe']);
+    unset($_SESSION['inventory']);
 	header("location: ../../login.php");
 }
 ?>
@@ -95,7 +99,7 @@ if (isset($_GET['logout'])) {
                             </li>
 
                             <li>
-                                <a href="calendar.html" class="waves-effect"><i class="mdi mdi-shopping"></i><span> Shopping List </span></a>
+                                <a href="chatbot.php" class="waves-effect"><i class="mdi mdi-shopping"></i><span> Chat Bot </span></a>
                             </li>
 
                             <li class="menu-title">Help & Support</li>
