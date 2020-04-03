@@ -158,8 +158,8 @@ if (isset($_GET['logout'])) {
                                 <!-- notification-->
                                 <li class="list-inline-item dropdown notification-list">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"
-                                       aria-haspopup="false" aria-expanded="false">
-                                        <i class="ion-ios7-bell noti-icon" onclick="notificationCount()"></i>
+                                       aria-haspopup="false" aria-expanded="false" onclick="notificationCount()">
+                                        <i class="ion-ios7-bell noti-icon"></i>
                                         <span class="badge badge-danger noti-icon-badge" id="notificationCount">1</span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">
@@ -278,7 +278,7 @@ if (isset($_GET['logout'])) {
                                     <div class="card m-b-20">
                                         <div class="card-body">
 
-                                            <h4 class="mt-0 header-title">Advanced Smil Animations</h4>
+                                            <h4 class="mt-0 header-title">Graph</h4>
 
                                             <ul class="list-inline widget-chart m-t-20 m-b-15 text-center">
                                                 <li class="list-inline-item">

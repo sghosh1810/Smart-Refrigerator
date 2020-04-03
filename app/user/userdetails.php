@@ -179,7 +179,7 @@ if (isset($_GET['logout'])) {
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item active">
                                             <div class="notify-icon bg-success"><i class="mdi mdi-checkbox-marked-circle-outline"></i></div>
-                                            <p class="notify-details"><b id="notificationLoginDateHandler">Logged in on </b><small class="text-muted" id="notificationLoginTimeHandler">at saf</small></p>
+                                            <p class="notify-details"><b id="notificationLoginDateHandler">Logged in on </b><small class="text-muted" id="notificationLoginTimeHandler">at Time</small></p>
                                         </a>
 
                                         <!-- All-->
@@ -239,7 +239,7 @@ if (isset($_GET['logout'])) {
                                             <p> </p>
                                             <p> </p>
                                             <iframe style="width:0;height:0;border:0; border:none;" name="dummyframe" id="dummyframe"></iframe>
-                                            <form action="userdetails.php" method="post" target="dummyframe">
+                                            <form action="userdetails.php" method="post" target="dummyframe" id="sa-useredit">
                                                 <div class="form-group row" action="userdetails.php">
                                                     <label for="example-text-input" class="col-sm-2 col-form-label">Username</label>
                                                     <div class="col-sm-10">
@@ -261,7 +261,7 @@ if (isset($_GET['logout'])) {
                                                 <div class="form-group" align="right">
                                                     <div>
                                                         <p></p>
-                                                        <button type="submit" class="btn btn-pink waves-effect waves-light m-r-5" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to save modifications" name="editUser" id="sa-useredit"> 
+                                                        <button type="submit" class="btn btn-pink waves-effect waves-light m-r-5" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to save modifications" name="editUser" > 
                                                             Save
                                                         </button>
                                                         <button type="reset" class="btn btn-secondary waves-effect" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to revert modifications">

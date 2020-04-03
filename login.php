@@ -48,7 +48,7 @@
                     
                     <div class="p-3">
                         <h4 class="text-dark font-18 m-b-5 text-center">Welcome Back !</h4>
-                        <p class="text-muted text-center">Sign in to continue to Smarty.</p>
+                        <p class="text-muted text-center">Sign in to continue to Refrigerg.</p>
 
                         <form method="post" class="form-horizontal m-t-30" action="login.php">
                             <?php include('handlers/errorHandler.php'); ?>

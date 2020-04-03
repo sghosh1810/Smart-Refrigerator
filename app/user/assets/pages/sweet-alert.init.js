@@ -41,8 +41,8 @@
             )
         });
 
-        //Success Message override for userdetails.php
-        $('#sa-useredit').click(function () {
+        //Success Message override for userdetails.php -> Trigger on form submit
+        $('#sa-useredit').submit(function () {
             Swal.fire(
                 {
                     title: 'Saved',
