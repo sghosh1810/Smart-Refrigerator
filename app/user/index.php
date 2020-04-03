@@ -61,9 +61,9 @@ if (isset($_GET['logout'])) {
 
                 <!-- LOGO -->
                 <div class="topbar-left">
-                    <div class="">
+                    <div align="left">
                         <!--<a href="index.html" class="logo text-center">Admiria</a>-->
-                        <a href="index.php" class="logo"><img src="assets/images/logo-sm.png" height="36" alt="logo"></a>
+                        <a href="index.php" class="logo"><img src="https://console.dialogflow.com/api-client/assets/img/logo-short.png" height="36" alt="logo">R E F R I G E R G</a>
                     </div>
                 </div>
 

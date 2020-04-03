@@ -22,7 +22,7 @@ if (isset($_GET['logout'])) {
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>Dashboard</title>
+        <title>Chatbot</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Themesbrand" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -57,7 +57,7 @@ if (isset($_GET['logout'])) {
                 <div class="topbar-left">
                     <div class="">
                         <!--<a href="index.html" class="logo text-center">Admiria</a>-->
-                        <a href="index.php" class="logo"><img src="assets/images/logo-sm.png" height="36" alt="logo"></a>
+                        <a href="index.php" class="logo"><img src="https://console.dialogflow.com/api-client/assets/img/logo-short.png" height="36" alt="logo">R E F R I G E R G</a>
                     </div>
                 </div>
 
@@ -67,7 +67,7 @@ if (isset($_GET['logout'])) {
 
                             <li class="menu-title">Main</li>
 
-                            <li class="has_sub">
+                            <li>
                                 <a href="index.php" class="waves-effect"><i class="mdi mdi-view-dashboard"></i><span> Dashboard </span></a>
                             </li>
 
@@ -198,7 +198,7 @@ if (isset($_GET['logout'])) {
                                     </button>
                                 </li>
                                 <li class="hide-phone list-inline-item app-search">
-                                    <h3 class="page-title">Dashboard</h3>
+                                    <h3 class="page-title">Chat Bot</h3>
                                 </li>
                             </ul>
 

@@ -60,21 +60,11 @@ if (isset($_GET['logout'])) {
 
             <!-- ========== Left Sidebar Start ========== -->
             <div class="left side-menu">
-
                 <!-- LOGO -->
                 <div class="topbar-left">
                     <div class="">
                         <!--<a href="index.html" class="logo text-center">Admiria</a>-->
-                        <a href="index.php" class="logo"><img src="assets/images/logo-sm.png" height="36" alt="logo"></a>
-                    </div>
-                </div>
-                <div class="left side-menu">
-
-                <!-- LOGO -->
-                <div class="topbar-left">
-                    <div class="">
-                        <!--<a href="index.html" class="logo text-center">Admiria</a>-->
-                        <a href="index.php" class="logo"><img src="assets/images/logo-sm.png" height="36" alt="logo"></a>
+                        <a href="index.php" class="logo"><img src="https://console.dialogflow.com/api-client/assets/img/logo-short.png" height="36" alt="logo">R E F R I G E R G</a>
                     </div>
                 </div>
 
@@ -217,7 +207,7 @@ if (isset($_GET['logout'])) {
                                     </button>
                                 </li>
                                 <li class="hide-phone list-inline-item app-search">
-                                    <h3 class="page-title">Dashboard</h3>
+                                    <h3 class="page-title">Reciepe Recommender</h3>
                                 </li>
                             </ul>
 
