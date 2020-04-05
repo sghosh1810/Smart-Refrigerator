@@ -54,6 +54,20 @@
                 }
             )
         });
+        
+        //Success Message override for contact.php -> Trigger on form submit
+        $('#sa-contactform').submit(function () {
+            Swal.fire(
+                {
+                    title: 'Saved',
+                    text: 'Your response has been sent successfully!',
+                    type: 'success',
+                    showCancelButton: false,
+                    confirmButtonClass: 'btn btn-success',
+                    cancelButtonClass: 'btn btn-danger m-l-10'
+                }
+            )
+        });
 
         //Warning Message
         $('#sa-warning').click(function () {

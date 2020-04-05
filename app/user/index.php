@@ -94,11 +94,11 @@ if (isset($_GET['logout'])) {
                             <li class="menu-title">Help & Support</li>
 
                             <li>
-                                <a href="faq.html" class="waves-effect"><i class="mdi mdi-help-circle"></i><span> FAQ </span></a>
+                                <a href="faq.php" class="waves-effect"><i class="mdi mdi-help-circle"></i><span> FAQ </span></a>
                             </li>
 
                             <li>
-                                <a href="contact.html" class="waves-effect"><i class="mdi mdi-headset"></i><span> Contact <span class="badge badge-pill badge-warning pull-right">3</span> </span></a>
+                                <a href="contact.php" class="waves-effect"><i class="mdi mdi-headset"></i><span> Contact </span></a>
                             </li>
 
                         </ul>

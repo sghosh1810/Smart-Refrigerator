@@ -95,11 +95,11 @@ if (isset($_GET['logout'])) {
                             <li class="menu-title">Help & Support</li>
 
                             <li>
-                                <a href="faq.html" class="waves-effect"><i class="mdi mdi-help-circle"></i><span> FAQ </span></a>
+                                <a href="faq.php" class="waves-effect"><i class="mdi mdi-help-circle"></i><span> FAQ </span></a>
                             </li>
 
                             <li>
-                                <a href="contact.html" class="waves-effect"><i class="mdi mdi-headset"></i><span> Contact <span class="badge badge-pill badge-warning pull-right">3</span> </span></a>
+                                <a href="contact.php" class="waves-effect"><i class="mdi mdi-headset"></i><span> Contact </span></a>
                             </li>
 
                         </ul>
@@ -161,8 +161,8 @@ if (isset($_GET['logout'])) {
                                 <!-- notification-->
                                 <li class="list-inline-item dropdown notification-list">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"
-                                       aria-haspopup="false" aria-expanded="false">
-                                        <i class="ion-ios7-bell noti-icon" onclick="notificationCount()"></i>
+                                       aria-haspopup="false" aria-expanded="false" onclick="notificationCount()">
+                                        <i class="ion-ios7-bell noti-icon"></i>
                                         <span class="badge badge-danger noti-icon-badge" id="notificationCount">1</span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-menu-lg">

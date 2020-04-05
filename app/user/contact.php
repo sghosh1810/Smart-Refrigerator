@@ -1,12 +1,11 @@
 <?php
-include('handlers/userDetailsHandler.php');
-
 session_start();
 
 if (!isset($_SESSION['username'])) {
 	$_SESSION['msg'] = "You must log in first";
 	header('location: ../../login.php');
 }
+
 if (isset($_GET['logout'])) {
 	session_destroy();
 	unset($_SESSION['username']);
@@ -17,6 +16,8 @@ if (isset($_GET['logout'])) {
 	header("location: ../../login.php");
 }
 ?>
+<?php include('handlers/contactFormHandler.php') ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -24,16 +25,13 @@ if (isset($_GET['logout'])) {
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>User Details</title>
+        <title>Inventory List</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Themesbrand" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- App Icons -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
-
-        <!-- C3 charts css -->
-        <link href="../plugins/c3/c3.min.css" rel="stylesheet" type="text/css" />
 
         <!-- Basic Css files -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -95,7 +93,7 @@ if (isset($_GET['logout'])) {
                             </li>
 
                             <li>
-                                <a href="contact.php" class="waves-effect"><i class="mdi mdi-headset"></i><span> Contact </span></a>
+                                <a href="contact.php" class="waves-effect"><i class="mdi mdi-headset"></i><span> Contact </a>
                             </li>
 
                         </ul>
@@ -170,7 +168,7 @@ if (isset($_GET['logout'])) {
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item active">
                                             <div class="notify-icon bg-success"><i class="mdi mdi-checkbox-marked-circle-outline"></i></div>
-                                            <p class="notify-details"><b id="notificationLoginDateHandler">Logged in on </b><small class="text-muted" id="notificationLoginTimeHandler">at Time</small></p>
+                                            <p class="notify-details"><b id="notificationLoginDateHandler">Logged in on </b><small class="text-muted" id="notificationLoginTimeHandler">at saf</small></p>
                                         </a>
 
                                         <!-- All-->
@@ -187,7 +185,7 @@ if (isset($_GET['logout'])) {
                                         <img src="assets/images/users/marvel.png" alt="user" class="rounded-circle">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
-                                        <a class="dropdown-item" href="#"><i class="dripicons-user text-muted"></i> Profile</a>
+                                        <a class="dropdown-item" href="userdetails.php"><i class="dripicons-user text-muted"></i> Profile</a>
                                         <a class="dropdown-item" href="#"><i class="dripicons-lock text-muted"></i> Lock screen</a>
                                         <div class="dropdown-divider"></div>
                                         <a class="dropdown-item" href="index.php?logout='1'"><i class="dripicons-exit text-muted"></i> Logout</a>
@@ -203,7 +201,7 @@ if (isset($_GET['logout'])) {
                                     </button>
                                 </li>
                                 <li class="hide-phone list-inline-item app-search">
-                                    <h3 class="page-title">User Details</h3>
+                                    <h3 class="page-title">Inventory List</h3>
                                 </li>
                             </ul>
 
@@ -220,52 +218,79 @@ if (isset($_GET['logout'])) {
                     <div class="page-content-wrapper">
 
                         <div class="container-fluid">
-
                         <div class="row">
                                 <div class="col-12">
-                                    <div class="card m-b-20">
+                                    <div class="card">
                                         <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="text-center">
+                                                        <h5>Have any questions?</h5>
+                                                        <p class="text-muted">Drop us a line by email or by this contact form!</p>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                                            <h4 class="mt-0 header-title" align="center">User Details</h4>
-                                            <p> </p>
-                                            <p> </p>
-                                            <iframe style="width:0;height:0;border:0; border:none;" name="dummyframe" id="dummyframe"></iframe>
-                                            <form action="userdetails.php" method="post" target="dummyframe" id="sa-useredit">
-                                                <div class="form-group row" action="userdetails.php">
-                                                    <label for="example-text-input" class="col-sm-2 col-form-label">Username</label>
-                                                    <div class="col-sm-10">
-                                                        <input class="form-control" type="text" id="example-text-input" value=<?php echo $_SESSION['username'];?> name="username" readonly="readonly">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-email-input" class="col-sm-2 col-form-label">Email</label>
-                                                    <div class="col-sm-10">
-                                                        <input class="form-control" type="email" id="example-email-input" value=<?php echo $_SESSION['email'];?> name="email">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label for="example-password-input" class="col-sm-2 col-form-label">New Password</label>
-                                                    <div class="col-sm-10">
-                                                        <input class="form-control" type="password" value="" id="example-password-input" name="password" required>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group" align="right">
+                                            <div class="row m-t-40">
+                                                <div class="col-md-4">
                                                     <div>
-                                                        <p></p>
-                                                        <button type="submit" class="btn btn-pink waves-effect waves-light m-r-5" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to save modifications" name="editUser" > 
-                                                            Save
-                                                        </button>
-                                                        <button type="reset" class="btn btn-secondary waves-effect" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Click to revert modifications">
-                                                            Cancel
-                                                        </button>
+                                                        <h6 class="font-14">Email Address</h6>
+                                                        <p class="text-muted">support@refrigerg.com</p>
+                                                    </div>
+                                                    <div class="pt-3">
+                                                        <h6 class="font-14">Telephone number</h6>
+                                                        <p class="text-muted">+980 416 2649</p>
+                                                    </div>
+                                                    <div class="pt-3">
+                                                        <h6 class="font-14">Address</h6>
+                                                        <p class="text-muted">Some where is this world, No Mans Land</p>
                                                     </div>
                                                 </div>
-                                            </form>
+                                                <div class="col-md-8">
+                                                    <iframe style="width:0;height:0;border:0; border:none;" name="dummyframe" id="dummyframe"></iframe>
+                                                    <form action="contact.php" method="post" target="dummyframe" id="sa-contactform">
+                                                        <?php include('handlers/errorHandler.php'); ?>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="sr-only" for="username">Name</label>
+                                                                    <input type="text" class="form-control" id="username" placeholder="Your Name" required="" name="username" value=<?php echo $_SESSION['username'];?> readonly>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="sr-only" for="useremail">Email address</label>
+                                                                    <input type="email" class="form-control" id="useremail" placeholder="Your Email" required="" name="email" value=<?php echo $_SESSION['email'];?> readonly>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label class="sr-only" for="usersubject">Subject</label>
+                                                                    <input type="text" class="form-control" id="usersubject" placeholder="Subject" required="" name="subject">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <textarea class="form-control" rows="5" placeholder="Your Message...." required="" name="message"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12 text-center">
+                                                                <button type="submit" class="btn btn-primary waves-effect waves-light" name="contactForm">Send Message</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div> <!-- end col -->
-                            </div> <!-- end row -->
-
+                                </div>
+                            </div>
                         </div><!-- container-fluid -->
 
                     </div> <!-- Page content Wrapper -->
@@ -293,31 +318,15 @@ if (isset($_GET['logout'])) {
         <script src="assets/js/jquery.nicescroll.js"></script>
         <script src="assets/js/jquery.scrollTo.min.js"></script>
 
-        <!-- Notification js -->
-        <script src="assets/js/notification.js"></script>
-        
-
-        <!-- Peity chart JS -->
-        <script src="../plugins/peity-chart/jquery.peity.min.js"></script>
-
-        <!--C3 Chart-->
-        <script src="../plugins/d3/d3.min.js"></script>
-        <script src="../plugins/c3/c3.min.js"></script>
-
-        <!-- KNOB JS -->
-        <script src="../plugins/jquery-knob/excanvas.js"></script>
-        <script src="../plugins/jquery-knob/jquery.knob.js"></script>
-
-        <!-- Page specific js -->
-        <script src="assets/pages/dashboard.js"></script>
-
         <!-- App js -->
         <script src="assets/js/app.js"></script>
+
+        <!-- Notification js -->
+        <script src="assets/js/notification.js"></script>
 
         <!-- Sweet-Alert  -->
         <script src="../plugins/sweet-alert2/sweetalert2.all.min.js"></script>
         <script src="assets/pages/sweet-alert.init.js"></script>
-
 
     </body>
 </html>
