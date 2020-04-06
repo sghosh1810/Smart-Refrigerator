@@ -25,7 +25,7 @@ if (isset($_GET['logout'])) {
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-        <title>Inventory List</title>
+        <title>Contact Us</title>
         <meta content="Admin Dashboard" name="description" />
         <meta content="Themesbrand" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -201,7 +201,7 @@ if (isset($_GET['logout'])) {
                                     </button>
                                 </li>
                                 <li class="hide-phone list-inline-item app-search">
-                                    <h3 class="page-title">Inventory List</h3>
+                                    <h3 class="page-title">Contact Us</h3>
                                 </li>
                             </ul>
 
