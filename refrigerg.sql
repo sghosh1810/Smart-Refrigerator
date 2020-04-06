@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 01, 2020 at 11:42 AM
+-- Generation Time: Apr 06, 2020 at 02:05 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.27
 
@@ -21,6 +21,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `refrigerg`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `username` varchar(255) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` mediumtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`username`, `email`, `subject`, `message`) VALUES
+('Shounak Ghosh', 'sghsoh1810@gmail.com', 'Test', 'Test'),
+('Shounak Ghosh', 'sghosh1810@gmail.com', 'Crash Logs', 'Crash of menu?'),
+('admin', 'sghosh1810@gmail.com', 'Change billing', 'Final test?');
 
 -- --------------------------------------------------------
 
