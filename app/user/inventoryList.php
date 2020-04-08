@@ -249,6 +249,7 @@ if (isset($_GET['logout'])) {
                                                         <th>Quantity</th>
                                                         <th>Price[Per Unit]</th>
                                                         <th>Total Price</th>
+                                                        <th>Expiry Date</th>
                                                     </tr>
                                                 </thead>
 

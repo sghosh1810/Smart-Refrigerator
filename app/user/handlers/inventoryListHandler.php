@@ -20,16 +20,22 @@
         $totalPrice += $totalPricePerItem;
         $numberOfItems += $row[2];
         $numberOfVariety += 1;
+        $expiryDate = $row[4];
         array_push($itemNamesArray,$row[1]);
         array_push($itemQuantityArray,$row[2]);
         array_push($itemPriceArray,$row[3]);
         array_push($itemTotalPriceArray,$totalPricePerItem);
-        $datarow = $datarow."<tr><td>$row[1]</td><td>$row[2]</td><td>$$row[3]</td><td>$$totalPricePerItem</td></tr>";
+        $datarow = $datarow."<tr><td>$row[1]</td><td>$row[2]</td><td>$$row[3]</td><td>$$totalPricePerItem</td><td>$expiryDate</td></tr>";
     }
 
     $_SESSION['inventory'] = $datarow;
     $_SESSION['totalPrice'] = $totalPrice;
-    $_SESSION['numberOfItems'] = $numberOfItems;
+    if ($numberOfItems>0) {
+        $_SESSION['numberOfItems'] = $numberOfItems;
+    } else {
+        $_SESSION['numberOfItems'] = 1;
+    }
+
     $_SESSION['numberOfVariety'] = $numberOfVariety;
     $_SESSION['itemPriceArray'] = $itemPriceArray;
     $_SESSION['itemNamesArray'] = $itemNamesArray;
