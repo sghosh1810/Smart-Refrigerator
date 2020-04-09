@@ -23,6 +23,9 @@ if (isset($_GET['logout'])) {
 }
 ?>
 
+<?php include('handlers/inventoryListHandlerReload.php');?>
+
+
 
 
 <!doctype html>
@@ -258,7 +261,10 @@ if (isset($_GET['logout'])) {
                                                     <?php echo $_SESSION['inventory']?>
                                                 </tbody>
                                             </table>
-
+                                            <p></p>
+                                            <div align="left">
+                                                <button class="btn btn-primary waves-effect waves-light" type="submit" onClick="window.location.reload();"><i class="mdi mdi-reload"></i><span>Reload</span></button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div> <!-- end col -->
